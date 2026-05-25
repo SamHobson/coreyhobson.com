@@ -5,12 +5,14 @@ client: "Yoast"
 role: "Senior UX Designer"
 date: 2022-03-15
 tags: ["saas", "e-commerce", "seo", "ux"]
-draft: true
-image: "/images/yoast-seo.jpg"
+draft: false
+image: "/images/yoast-onboarding.png"
 website: "https://yoast.com"
 ---
 
 Yoast SEO is the most widely used SEO plugin on the web, installed on over 12 million WordPress sites. The Shopify launch was a strategic expansion: bringing the same search-optimization intelligence to a platform where store owners needed it but spoke a different product language.
+
+![Yoast SEO badge and branding for the Shopify ecosystem](/images/yoast-badge.png)
 
 As Senior UX Designer, I led the UX work for adapting Yoast's analysis engine and interface to Shopify's ecosystem. The challenge was not technical parity. It was translation. Shopify merchants think in products, collections, and conversion funnels. WordPress users think in posts, pages, and categories. Same goal, different mental model.
 
@@ -24,7 +26,13 @@ I mapped the existing user flows against Shopify's object model, identifying whe
 
 Shopify store owners are not SEO specialists. They run businesses. The interface needed to surface actionable recommendations without requiring the user to understand canonical URLs, schema markup, or keyword density. Every warning needed a fix button. Every fix button needed to work without leaving the product page.
 
+![Onboarding flow — native Shopify experience from first launch](/images/yoast-onboarding.png)
+
+![Upsell and feature discovery integrated into the merchant workflow](/images/yoast-upsell.png)
+
 This meant close collaboration with the engineering team to ensure the analysis engine could both detect issues and resolve them through Shopify's APIs. The design constraints were as much technical as they were visual.
+
+![MyYoast integration — connected account dashboard](/images/yoast-myyoast.webp)
 
 ## Process
 

@@ -6,7 +6,7 @@ role: "Head of UX"
 date: 2024-02-20
 tags: ["gaming", "sim-racing", "ux"]
 draft: false
-image: "/images/le-mans-ultimate.webp"
+image: "/images/lmu-final-menu.webp"
 website: "https://lemansultimate.com"
 ---
 
@@ -22,13 +22,31 @@ Like endurance racing itself, the time spent planning was a key contributor to t
 
 The main menu concept drew from moodboards and initial style investigations. Inspiration came from manufacturer marketing material, magazine articles, and advertisements built around the World Endurance Championship.
 
+![Main menu concept exploration — moodboards and early visual direction](/images/lmu-menu-concept.webp)
+
+![Wireframe exploration for the main menu layout and information architecture](/images/lmu-wireframe-1.webp)
+
 ### Refined Mid-Fi
 
 Mid-fidelity designs served as the build-off point. Final refinement came from hands-on experience with the UI in-engine.
 
+![Mid-fidelity menu design — the bridge between concept and final](/images/lmu-midfi-1.webp)
+
+![Menu layout refinement with real game content](/images/lmu-midfi-2.webp)
+
+![HUD and in-race UI design at mid-fi stage](/images/lmu-midfi-3.webp)
+
 ### Final Release
 
 The main menu needed life. Originally we aimed to use in-game renders and video, but technical constraints forced a pivot. The solution: a breathing effect paired with in-game screenshots to introduce the game while bringing atmosphere to the environment. Menu hierarchy was reworked to better apply the law of proximity and similarity.
+
+![Released main menu — breathing effect with in-game captures](/images/lmu-final-menu.webp)
+
+![In-race HUD — final release](/images/lmu-final-hud.webp)
+
+![Circuit selection screen — final release](/images/lmu-circuit-select.jpg)
+
+![Multiplayer lobby — final release](/images/lmu-multiplayer.webp)
 
 ## Tools
 

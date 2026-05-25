@@ -5,18 +5,24 @@ client: "Mirro"
 role: "Designer"
 date: 2020-08-01
 tags: ["health-tech", "e-health", "saas", "ux"]
-draft: true
-image: "/images/mirro.jpg"
+draft: false
+image: "/images/mirro-practitioner.png"
 website: "https://mirro.nl"
 ---
 
 Mirro is a Dutch E-Health platform that connects patients with healthcare providers through shared health records, appointment management, and secure messaging. The product operates at the intersection of clinical rigor and consumer usability: patients need clarity, practitioners need speed, and regulators need compliance.
+
+![Mirro logo and brand identity](/images/mirro-logo.webp)
 
 As a Designer, I worked across the patient-facing and practitioner-facing interfaces. The work spanned user research, interaction design, and visual refinement for a product used in real clinical settings.
 
 ## Designing for two audiences
 
 The platform served two distinct user groups with conflicting needs. Patients wanted simplicity, reassurance, and clear pathways to action. Healthcare providers wanted density, efficiency, and complete medical context at a glance.
+
+![Patient-facing dashboard — simplified, reassuring, clear actions](/images/mirro-patient.png)
+
+![Practitioner-facing interface — dense, efficient, full medical context](/images/mirro-practitioner.png)
 
 Bridging this gap meant designing shared components that rendered differently depending on context. A lab result looked clinical and detailed for the practitioner but was simplified with plain-language explanations for the patient. Same data, two presentations, one source of truth.
 
