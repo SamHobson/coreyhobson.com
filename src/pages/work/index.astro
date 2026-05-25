@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allWork = (await getCollection("case-studies"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Work" description="Case studies from Fugro, Motorsport Games, Yoast, and Mirro.">
+  <section class="max-w-6xl mx-auto px-6 pt-24 pb-12">
+    <h1 class="text-4xl md:text-5xl mb-4">Work</h1>
+    <p class="text-muted text-lg max-w-2xl">
+      Selected projects across gaming, geospatial intelligence, SEO tooling, and
+      health tech.
+    </p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="grid grid-cols-1 gap-8">
+      {allWork.map((study) => (
+        <a
+          href={`/work/${study.id.replace(/\.md$/, "")}`}
+          class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
+        >
+          {study.data.image && (
+            <div class="aspect-[21/9] overflow-hidden">
+              <img
+                src={study.data.image}
+                alt={study.data.title}
+                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div class="p-8">
+            <p class="text-muted text-xs uppercase tracking-widest mb-3 font-mono">
+              {study.data.client} &middot; {study.data.role}
+            </p>
+            <h2 class="text-2xl mb-3 group-hover:text-accent transition-colors">
+              {study.data.title}
+            </h2>
+            <p class="text-muted leading-relaxed max-w-2xl">
+              {study.data.description}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

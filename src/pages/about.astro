@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const timeline = [
+  {
+    period: "2024 - Present",
+    role: "Lead Product Designer",
+    company: "Fugro",
+    description:
+      "Designing GroundIQ, Fugro's geospatial intelligence platform. Translating subsurface data, satellite imagery, and risk models into tools that infrastructure and energy clients use to make ground-risk decisions.",
+  },
+  {
+    period: "2022 - 2024",
+    role: "Head of UX",
+    company: "Motorsport Games / Studio 397",
+    description:
+      "Led UX for Le Mans Ultimate and the Race Control platform. Built the UX strategy, assembled and managed the design team, and shipped the first Le Mans game in nearly 40 years.",
+  },
+  {
+    period: "2020 - 2022",
+    role: "Senior UX Designer",
+    company: "Yoast",
+    description:
+      "Led the UX for Yoast SEO's expansion to Shopify. Adapted a WordPress-native plugin to an entirely different platform, merchant mental model, and app ecosystem.",
+  },
+  {
+    period: "2019 - 2020",
+    role: "Designer",
+    company: "Mirro",
+    description:
+      "Designed patient-facing and practitioner-facing interfaces for a Dutch E-Health platform used in clinical settings across the Netherlands.",
+  },
+];
+---
+
+<BaseLayout title="About" description="Corey Hobson is a Lead Product Designer at Fugro, building GroundIQ. Background in gaming, SEO, and health tech.">
+  <section class="max-w-3xl mx-auto px-6 pt-24 pb-12">
+    <h1 class="text-4xl md:text-5xl mb-8">About</h1>
+    <div class="prose">
+      <p>
+        Corey Hobson is a Lead Product Designer at Fugro, working on GroundIQ.
+        He designs complex data platforms that make technical domains accessible
+        to the people who need to make decisions in them.
+      </p>
+      <p>
+        His work sits at the intersection of product design, AI, and data-heavy
+        tools. He approaches product problems through strategy first, then
+        craft. That means research, information architecture, and system thinking
+        before pixels. When it comes to execution, he works close to the code and
+        uses AI-first workflows to move faster without losing quality.
+      </p>
+      <p>
+        Before Fugro, he led UX at Motorsport Games where he shipped Le Mans
+        Ultimate and built the Race Control platform. Before that, he was a
+        Senior UX Designer at Yoast, leading the Shopify launch of the web's most
+        popular SEO plugin. He started his design career at Mirro, a Dutch
+        E-Health company where he learned what it means to design interfaces
+        where mistakes carry real consequences.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24">
+    <h2 class="text-2xl mb-8">Timeline</h2>
+    <div class="flex flex-col gap-0 border-t border-border">
+      {timeline.map((entry) => (
+        <div class="py-6 border-b border-border grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-4">
+          <span class="text-muted text-sm font-mono">{entry.period}</span>
+          <div>
+            <h3 class="text-base mb-1">
+              {entry.role}
+              <span class="text-muted"> at {entry.company}</span>
+            </h3>
+            <p class="text-muted text-sm leading-relaxed">
+              {entry.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 pb-24">
+    <h2 class="text-2xl mb-6">Get in touch</h2>
+    <p class="text-muted leading-relaxed">
+      For work inquiries, collaborations, or just to say hello:
+      <a href="mailto:hello@coreyhobson.com" class="text-accent hover:text-accent-hover">
+        hello@coreyhobson.com
+      </a>
+    </p>
+  </section>
+</BaseLayout>

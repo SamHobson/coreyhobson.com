@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D1112"/>
+  <rect x="60" y="60" width="4" height="120" fill="#C2703E"/>
+  <text x="90" y="140" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#E6E4E0">Corey Hobson</text>
+  <text x="90" y="200" font-family="system-ui, sans-serif" font-size="28" fill="#8B8580">Lead Product Designer at Fugro</text>
+  <rect x="60" y="540" width="1080" height="2" fill="#2A2724"/>
+  <text x="90" y="580" font-family="ui-monospace, monospace" font-size="18" fill="#8B8580">coreyhobson.com</text>
+</svg>

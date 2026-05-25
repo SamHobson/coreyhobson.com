@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("case-studies");
+  return entries.map((entry) => ({
+    params: { slug: entry.id.replace(/\.md$/, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "long" });
+}
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.image}
+  type="article"
+>
+  <article class="max-w-3xl mx-auto px-6 pt-24 pb-24">
+    <header class="mb-12">
+      <p class="text-muted text-xs uppercase tracking-widest mb-4 font-mono">
+        {entry.data.client} &middot; {entry.data.role} &middot; {formatDate(entry.data.date)}
+      </p>
+      <h1 class="text-4xl md:text-5xl mb-6">{entry.data.title}</h1>
+      <p class="text-muted text-lg leading-relaxed">{entry.data.description}</p>
+      {entry.data.website && (
+        <a
+          href={entry.data.website}
+          class="inline-block mt-4 text-accent hover:text-accent-hover text-sm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit website &rarr;
+        </a>
+      )}
+    </header>
+
+    {entry.data.image && (
+      <div class="mb-12 -mx-6 md:-mx-12">
+        <img
+          src={entry.data.image}
+          alt={entry.data.title}
+          class="w-full rounded-sm"
+        />
+      </div>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-border">
+      <a href="/work" class="text-muted hover:text-text text-sm transition-colors">
+        &larr; All work
+      </a>
+    </footer>
+  </article>
+</BaseLayout>

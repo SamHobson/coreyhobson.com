@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allWork = (await getCollection("case-studies"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const allPosts = (await getCollection("blog"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const allProjects = (await getCollection("projects"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
+}
+---
+
+<BaseLayout title="Corey Hobson">
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-24 pb-20">
+    <p class="text-muted text-sm uppercase tracking-widest mb-4 font-mono">
+      Lead Product Designer at Fugro
+    </p>
+    <h1 class="text-5xl md:text-7xl leading-none mb-6">
+      Corey Hobson
+    </h1>
+    <p class="text-muted text-lg max-w-2xl leading-relaxed">
+      Designing complex data platforms, AI-powered tools, and products that make
+      technical domains accessible. Currently building GroundIQ at Fugro.
+    </p>
+  </section>
+
+  <!-- Work -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-2xl">Work</h2>
+      <a href="/work" class="text-muted text-sm hover:text-text transition-colors">
+        All work &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {allWork.map((study) => (
+        <a
+          href={`/work/${study.id.replace(/\.md$/, "")}`}
+          class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
+        >
+          {study.data.image && (
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={study.data.image}
+                alt={study.data.title}
+                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div class="p-6">
+            <p class="text-muted text-xs uppercase tracking-widest mb-2 font-mono">
+              {study.data.client} &middot; {study.data.role}
+            </p>
+            <h3 class="text-xl mb-2 group-hover:text-accent transition-colors">
+              {study.data.title}
+            </h3>
+            <p class="text-muted text-sm leading-relaxed">
+              {study.data.description}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Writing -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-2xl">Writing</h2>
+      <a href="/blog" class="text-muted text-sm hover:text-text transition-colors">
+        All posts &rarr;
+      </a>
+    </div>
+    <div class="flex flex-col gap-0 border-t border-border">
+      {allPosts.map((post) => (
+        <a
+          href={`/blog/${post.id.replace(/\.md$/, "")}`}
+          class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5 border-b border-border hover:pl-2 transition-all"
+        >
+          <h3 class="text-base group-hover:text-accent transition-colors">
+            {post.data.title}
+          </h3>
+          <time class="text-muted text-sm font-mono shrink-0">
+            {formatDate(post.data.date)}
+          </time>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-2xl">Projects</h2>
+      <a href="/projects" class="text-muted text-sm hover:text-text transition-colors">
+        All projects &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {allProjects.map((project) => (
+        <a
+          href={`/projects/${project.id.replace(/\.md$/, "")}`}
+          class="group block bg-surface border border-border rounded-sm p-6 hover:border-accent/40 transition-colors"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-base group-hover:text-accent transition-colors">
+              {project.data.title}
+            </h3>
+            <span class="text-xs text-muted font-mono uppercase">
+              {project.data.status}
+            </span>
+          </div>
+          <p class="text-muted text-sm leading-relaxed">
+            {project.data.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

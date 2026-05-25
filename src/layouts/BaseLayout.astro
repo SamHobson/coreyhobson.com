@@ -1,0 +1,58 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article";
+}
+
+const {
+  title,
+  description = "Corey Hobson — Lead Product Designer at Fugro on GroundIQ. Product design, AI workflows, complex data platforms.",
+  image = "/images/og-default.png",
+  canonicalURL = Astro.url.href,
+  type = "website",
+} = Astro.props;
+
+const siteName = "Corey Hobson";
+const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+  </head>
+  <body class="bg-bg text-text min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
