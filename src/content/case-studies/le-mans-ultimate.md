@@ -6,7 +6,7 @@ role: "Head of UX"
 date: 2024-02-20
 tags: ["gaming", "sim-racing", "ux"]
 draft: false
-image: "/images/lmu-final-menu.webp"
+image: "/images/le-mans-ultimate.webp"
 website: "https://lemansultimate.com"
 ---
 
