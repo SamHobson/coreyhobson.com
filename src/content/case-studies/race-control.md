@@ -18,13 +18,7 @@ The design process was structured yet adaptable. It began with thorough research
 
 The next phase involved hands-on experimentation with wireframes and prototypes, quickly moving ideas into tangible forms for evaluation. Regular collaborative reviews kept the team aligned and responsive to new information and feedback.
 
-![Championship overview — the central hub for series standings, race results, and driver progression](/images/race-control-championship.jpg)
-
 Refinement was continuous. We sharpened designs for development readiness and stakeholder presentation, paying close attention to translating our vision into code and validating that the final implementation matched our design intentions.
-
-![Circuit selection — browse events, filter by track, and register for upcoming races](/images/race-control-circuit.jpg)
-
-![Co-op session management — create private lobbies, invite friends, and configure race parameters](/images/race-control-coop.jpg)
 
 This approach was pragmatic, rooted in UX principles, and driven by the goal of making sim racing accessible to a diverse gaming audience. The work on Race Control directly informed the UX strategy for Le Mans Ultimate.
 
