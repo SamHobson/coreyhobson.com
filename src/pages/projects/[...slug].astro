@@ -26,6 +26,15 @@ function formatDate(date: Date): string {
 >
   <article class="max-w-3xl mx-auto px-6 pt-24 pb-24">
     <header class="mb-12">
+      {entry.data.image && (
+        <div class="aspect-video overflow-hidden mb-8 rounded-sm">
+          <img
+            src={entry.data.image}
+            alt={entry.data.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      )}
       <p class="text-muted text-xs uppercase tracking-widest mb-4 font-mono">
         {formatDate(entry.data.date)} &middot; {entry.data.status}
       </p>
