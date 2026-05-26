@@ -10,9 +10,9 @@ status: "maintained"
 
 ## Why this exists
 
-GitHub's notification inbox is a firehose. Repository watches, release notifications, and CI pings bury the signal. Most developers either check GitHub obsessively (context-switching tax) or ignore it entirely (missed reviews, delayed responses).
+GitHub doesn't have a proper desktop notification app, and their notification system is shit. Stars, follows, CI pings, release notes — all firehosed into one inbox with no way to filter what actually needs attention.
 
-GitNews splits the difference: it watches everything but only interrupts for what needs action. Someone mentioned you. Someone requested your review. Someone assigned you an issue. Everything else is available if you want it but silent if you don't.
+Most developers cope by either checking GitHub obsessively (constant context switches) or ignoring it entirely (missed reviews, delayed responses). Neither is good. I wanted a menu bar app that only interrupts me when someone actually needs something.
 
 ## The pieces
 

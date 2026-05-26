@@ -11,9 +11,11 @@ image: "/images/realm-and-board.png"
 
 ## Why this exists
 
-Every chess match starts the same way: a symmetrical board, identical armies. The question that drove Realm & Board: what if the match didn't start equal? What if you had to earn your pieces first?
+Realm & Board is an experiment in how far AI can go building simple games. The entire codebase — Three.js rendering, chess logic, multiplayer networking, AI opponents, pixel art terrain generation — was built with Claude Code. I designed the game and made the decisions. The AI wrote the implementation.
 
-The game fuses real-time strategy with classical chess. You get 90 seconds on a pixel art island to gather resources, produce pieces, and clear enemy camps. Then you place your army on the board and play. Best of three rounds. The island is preparation; the board is war.
+The question wasn't "can AI make a game." It was "how good can the game be when a designer directs and an AI executes?" The answer turned out to be: surprisingly good.
+
+The concept itself is an RTS-chess hybrid. You get 90 seconds on a pixel art island to gather resources, produce pieces, and clear enemy camps. Then you place your army on the board and play. Best of three rounds. The island is preparation; the board is war.
 
 ## The pieces
 
