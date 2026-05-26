@@ -7,6 +7,7 @@ draft: false
 repo: "https://github.com/SamHobson/uxrstudy"
 live_url: "https://uxr-study.vercel.app"
 status: "active"
+image: "/images/uxr-study.png"
 ---
 
 ## What it is
