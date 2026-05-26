@@ -13,7 +13,7 @@ image: "/images/ai-workflow.png"
 
 My work runs through a setup that combines plain text files, an AI assistant in the terminal, and a tagged structure that connects everything. The core idea is routing: not every task needs Claude Opus. Most don't.
 
-<div class="my-8 flex justify-center">
+<div class="not-prose flex justify-center my-8">
 <svg width="720" height="140" viewBox="0 0 720 140" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- User -->
   <rect x="10" y="45" width="70" height="50" rx="4" fill="#14181A" stroke="#2A2724" stroke-width="1"/>
@@ -81,7 +81,7 @@ The system classifies every request and sends it to the right tier:
 
 ## The pieces
 
-<div class="flex flex-col md:flex-row gap-8 my-10 items-center">
+<div class="not-prose flex flex-col md:flex-row gap-8 my-10 items-center">
 <div class="flex-1">
 
 Everything I write lives in `.md` files. A `.md` file is plain text with light formatting: a hash mark for a heading, a dash for a bullet. No special software needed. My whole workspace is a folder of these files — meetings, decisions, project briefs, research, journal entries.
@@ -143,7 +143,7 @@ Plain text plus an AI that can read and edit it is the combination that makes th
 
 ## Why this works
 
-<div class="flex flex-col md:flex-row gap-8 my-10 items-center">
+<div class="not-prose flex flex-col md:flex-row gap-8 my-10 items-center">
 <div class="flex-1">
 
 **Context persistence.** The AI doesn't reset every session. It knows what I worked on yesterday and what's due this week. Long-running work doesn't have to be re-explained every time.
