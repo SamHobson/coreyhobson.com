@@ -1,6 +1,6 @@
 ---
 title: "GitNews"
-description: "macOS menu bar app for GitHub notifications. Surface what matters — mentions, review requests, assignments — through native alerts. No browser tab required to know someone's waiting."
+description: "macOS menu bar app for GitHub notifications. Surface what matters — mentions, review requests, assignments — through native alerts."
 date: 2026-02-06
 tags: ["macos", "typescript", "github", "dev-tools", "native"]
 draft: false
@@ -8,43 +8,40 @@ repo: "https://github.com/SamHobson/GitNews"
 status: "maintained"
 ---
 
-## What it is
+## Why this exists
 
-GitNews lives in your macOS menu bar and watches your GitHub notifications. It filters out the noise — stars, follows, CI status — and only interrupts you for the three things that actually matter: someone mentioned you, someone requested your review, or someone assigned you an issue.
+GitHub's notification inbox is a firehose. Repository watches, release notifications, and CI pings bury the signal. Most developers either check GitHub obsessively (context-switching tax) or ignore it entirely (missed reviews, delayed responses).
 
-The problem it solves is real: GitHub's notification inbox is a firehose. Repository watches, release notifications, and CI pings bury the signal. Most developers either check GitHub obsessively (context-switching tax) or ignore it entirely (missed reviews, delayed responses). GitNews splits the difference: it watches everything but only alerts on what needs action.
+GitNews splits the difference: it watches everything but only interrupts for what needs action. Someone mentioned you. Someone requested your review. Someone assigned you an issue. Everything else is available if you want it but silent if you don't.
 
-## Architecture
+## The pieces
 
-**Polling loop:** The app polls GitHub's notifications API at a configurable interval. Each poll returns all unread notifications. GitNews classifies them into three buckets: mentions, reviews, and everything else.
+**A menu bar icon with a badge.** The menu bar is where system information lives — WiFi, battery, clock. Notifications belong there too. The badge shows unread count. One click to see what's pending.
 
-**Smart filtering:** Only mentions, review requests, and assignments trigger a native macOS notification with sound. Everything else is available in the dropdown if you want it. The filter logic runs locally — no notification data leaves your machine.
+**A polling loop.** The app polls GitHub's notifications API at a configurable interval. Each poll returns all unread notifications. GitNews classifies them into three buckets: mentions, reviews, and everything else.
 
-**Native macOS integration:** Notifications use the system Notification Center with sound. The menu bar icon shows an unread count badge. Light/dark mode follows your system preference. Optional launch-at-login keeps it running without manual intervention.
+**Smart filtering.** Only mentions, review requests, and assignments trigger a native macOS notification with sound. The rest is available in the dropdown. The filter logic runs locally — no notification data leaves your machine.
 
-**Quick actions:** From the notification or dropdown, you can open the item in your browser, reply directly from the app (posts via GitHub API), or mark as read (syncs back to GitHub). No tab switching for routine responses.
+**Quick actions.** From the notification or dropdown, you can open the item in your browser, reply via the GitHub API, or mark as read. No tab switching for routine responses.
 
-**Security:** Your GitHub personal access token is encrypted and stored locally. The token only needs `notifications` and `repo` scopes — read your inbox, post comments. No broader permissions.
+## In practice
 
-## Design decisions
+The app ships with sensible defaults: 5-minute poll interval, only review/mention/assign alerts, sound on. Most people never need to open settings. You paste a GitHub token once and it runs. At login, at startup, in the background.
 
-**Menu bar, not dock.** A dock app with a window is overkill for a notification monitor. The menu bar is where system information lives — WiFi, battery, clock. Notifications belong there too. One click to see what's pending, one click to act.
+The token only needs `notifications` and `repo` scopes — read your inbox, post comments. No broader permissions. It's encrypted and stored locally.
 
-**Native over web wrapper.** Electron was the practical choice for cross-platform potential, but the UI is deliberately macOS-native. No web-style dropdowns. No browser devtools aesthetic. It feels like part of the operating system, not a website in a frame.
+## Why this works
 
-**Opinionated defaults.** The app ships with sensible defaults: 5-minute poll interval, only review/mention/assign alerts, sound on. Power users can tweak, but most people should never need to open settings.
+**Menu bar, not dock.** A dock app with a window is overkill for a notification monitor. The menu bar is where you glance. It's ambient, not demanding.
 
-## What it achieves
+**Opinionated defaults.** The app makes choices for you: what to alert on, how often to poll, whether to play sound. Power users can tweak, but most people should never need to.
 
-- Notification response time cut from hours to minutes for time-sensitive reviews
-- Reduced context-switching — no need to check GitHub proactively
-- Zero configuration required beyond pasting a token
-- Lightweight: 40MB memory footprint, negligible CPU
+**Native, not web.** Electron was the practical choice for cross-platform potential, but the UI is deliberately macOS-native. No web-style dropdowns. No browser devtools aesthetic. It feels like part of the operating system.
+
+## What it changes
+
+Notification response time drops from hours to minutes for time-sensitive reviews. No proactive GitHub checking means fewer context switches. 40MB memory footprint, negligible CPU — you forget it's running until it tells you something you need to know.
 
 ## Stack
 
-- **Language:** TypeScript
-- **Platform:** macOS (native menu bar, Electron)
-- **GitHub API:** REST via personal access token
-- **Security:** Token encrypted and stored locally, minimal required scopes
-- **Appearance:** System light/dark mode, native menu bar integration
+TypeScript, Electron, GitHub REST API, native macOS menu bar integration.
