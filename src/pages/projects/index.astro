@@ -20,25 +20,37 @@ const allProjects = (await getCollection("projects"))
       {allProjects.map((project) => (
         <a
           href={`/projects/${project.id.replace(/\.md$/, "")}`}
-          class="group block bg-surface border border-border rounded-sm p-6 hover:border-accent/40 transition-colors"
+          class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
         >
-          <div class="flex items-center justify-between mb-3">
-            <h2 class="text-lg group-hover:text-accent transition-colors">
-              {project.data.title}
-            </h2>
-            <span class="text-xs text-muted font-mono uppercase">
-              {project.data.status}
-            </span>
-          </div>
-          <p class="text-muted text-sm leading-relaxed mb-4">
-            {project.data.description}
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {project.data.tags.map((tag: string) => (
-              <span class="text-xs text-muted font-mono">
-                {tag}
+          {project.data.image && (
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={project.data.image}
+                alt={project.data.title}
+                class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-lg group-hover:text-accent transition-colors">
+                {project.data.title}
+              </h2>
+              <span class="text-xs text-muted font-mono uppercase">
+                {project.data.status}
               </span>
-            ))}
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4">
+              {project.data.description}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {project.data.tags.map((tag: string) => (
+                <span class="text-xs text-muted font-mono">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </a>
       ))}
