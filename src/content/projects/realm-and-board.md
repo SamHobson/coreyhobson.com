@@ -6,6 +6,7 @@ tags: ["game-dev", "threejs", "chess", "javascript", "web"]
 draft: false
 repo: "https://github.com/SamHobson/Realm-and-Board"
 status: "active"
+image: "/images/realm-and-board.png"
 ---
 
 ## What it is

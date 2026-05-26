@@ -6,6 +6,7 @@ tags: ["ai", "llm", "local-ml", "automation", "personal-tools"]
 draft: false
 repo: "https://github.com/SamHobson/hermes-config"
 status: "active"
+image: "/images/ai-workflow.png"
 ---
 
 ## What it does
