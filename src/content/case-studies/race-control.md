@@ -18,6 +18,8 @@ We knew LMU was going to be online-first with endurance racing. The RF2 engine h
 
 We ran surveys and card sorting exercises to get sim racers to rank the information they needed before committing to a race. What turned out to matter: race type, session times, track, car class, driver requirements. What didn't: most of the chrome we'd assumed was important.
 
+![The rFactor 2 Online Beta — the starting point. An Angular 0 frontend with a popup announcing the new competition system, powered by RaceControl.](/images/race-control-beta.jpg)
+
 ![Championship overview screen showing race series, standings, and upcoming events](/images/race-control-championship.jpg)
 
 ## The React decision
@@ -36,11 +38,13 @@ The biggest piece of research we ran was around driver ratings. In sim racing, p
 
 Our solution: brackets, not numbers. Silver, Gold, Platinum — safety rating tiers that were percentage-based and sticky enough to reduce anxiety. You could stay in your bracket. You still had impact. But you weren't watching a number tick down after one bad corner. It also gave us room to tune the system without players feeling every single tweak.
 
+![Car selection screen with vehicle stats and class filters](/images/race-control-car-select.jpg)
+
 ### Spontaneous game modes
 
 Research showed players burned out by locking into one genre and grinding it to exhaustion. So we added low-risk, spontaneous game modes — quick sessions with lower stakes. The serious sim racer could jump into something casual without feeling like they were damaging their rating. It kept people in the ecosystem longer.
 
-![Car selection screen with vehicle stats and class filters](/images/race-control-car-select.jpg)
+![Daily Races tiered structure — Beginner, Intermediate, and Advanced events. Safety rating gates unlock higher tiers, giving players a visible progression path without the anxiety of a live number.](/images/race-control-daily-races.jpg)
 
 ## Constraints
 
@@ -49,6 +53,8 @@ You're working in a legacy tool with horrible UX. You know you're going to aband
 The constraint forced discipline: build what matters, make it sustainable, ship it. Everything else is noise.
 
 ![Co-op session lobby with driver list and session configuration](/images/race-control-coop.jpg)
+
+![The Daily Race event screen — BMW M2 Cup at Lime Rock Park. Session breakdown, driver ratings, fastest lap leaderboard. The competition system in its mature form.](/images/race-control-bmw-m2.jpg)
 
 ## What carried forward
 
