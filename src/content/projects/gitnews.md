@@ -1,6 +1,6 @@
 ---
 title: "GitNews"
-description: "macOS menu bar app for GitHub notifications. Surface what matters — mentions, review requests, assignments — through native alerts."
+description: "macOS menu bar app for GitHub notifications. Built because the notification system wasn't designed for designers reviewing PRs — or for teams moving at AI speed."
 date: 2026-02-06
 tags: ["macos", "typescript", "github", "dev-tools", "native"]
 draft: false
@@ -10,37 +10,27 @@ status: "maintained"
 
 ## Why this exists
 
-GitHub doesn't have a proper desktop notification app, and their notification system is shit. Stars, follows, CI pings, release notes — all firehosed into one inbox with no way to filter what actually needs attention.
+We went AI-first at work. Everyone writing code. Designers and developers working toward the product, not their job titles. That meant I was suddenly in GitHub — and GitHub's notification system is shit.
 
-Most developers cope by either checking GitHub obsessively (constant context switches) or ignoring it entirely (missed reviews, delayed responses). Neither is good. I wanted a menu bar app that only interrupts me when someone actually needs something.
+When AI lets a team produce multiple PRs a day each, the firehose is real. A Slack message arrives: "review this PR." You open it. No screenshots. Just code. To actually evaluate it, you need to pull the branch locally. All of that context-switching just to figure out if your input is even needed.
 
-## The pieces
+I wanted a tool that would tell me when I was actually needed — and let me respond without leaving what I was doing.
 
-**A menu bar icon with a badge.** The menu bar is where system information lives — WiFi, battery, clock. Notifications belong there too. The badge shows unread count. One click to see what's pending.
+## What it does
 
-**A polling loop.** The app polls GitHub's notifications API at a configurable interval. Each poll returns all unread notifications. GitNews classifies them into three buckets: mentions, reviews, and everything else.
+**Filters the firehose.** The app polls GitHub's notifications API and classifies everything into three buckets: mentions, reviews, and the rest. Only reviews, mentions, and assignments trigger a native macOS notification. Everything else is available in the dropdown when you want it, not when it arrives.
 
-**Smart filtering.** Only mentions, review requests, and assignments trigger a native macOS notification with sound. The rest is available in the dropdown. The filter logic runs locally — no notification data leaves your machine.
+**Runs UX audits.** I built an automatic skill that runs heuristic evaluations on PRs. AI can't do all heuristics perfectly — some are better than others — but it does enough for a first pass. Developers get feedback. I don't context-switch. The review pipeline keeps moving.
 
-**Quick actions.** From the notification or dropdown, you can open the item in your browser, reply via the GitHub API, or mark as read. No tab switching for routine responses.
+**Became a news tracker.** Over time, the app evolved beyond notifications. I added quick-launch tools: terminals, routes, lazy-docker, pages, tabs. It now sits everywhere — desktop, menu bar, browser — showing what's coming in and going out at a glance. More dashboard than alert system now.
 
-## In practice
+## What I learned
 
-The app ships with sensible defaults: 5-minute poll interval, only review/mention/assign alerts, sound on. Most people never need to open settings. You paste a GitHub token once and it runs. At login, at startup, in the background.
+I am not a developer. I'm a UXer. I had never made a desktop application before this. The stack is TypeScript and Electron. There are still bugs I need to fix — it pulls all notifications when it should let me restrict what I care about. User settings need work.
 
-The token only needs `notifications` and `repo` scopes — read your inbox, post comments. No broader permissions. It's encrypted and stored locally.
+But here's what happened: other people at work saw it and built their own versions. Everyone found what worked for them. It didn't scale as a product — it scaled as an idea. Sometimes a tool's job is to show people what's possible.
 
-## Why this works
-
-**Menu bar, not dock.** A dock app with a window is overkill for a notification monitor. The menu bar is where you glance. It's ambient, not demanding.
-
-**Opinionated defaults.** The app makes choices for you: what to alert on, how often to poll, whether to play sound. Power users can tweak, but most people should never need to.
-
-**Native, not web.** Electron was the practical choice for cross-platform potential, but the UI is deliberately macOS-native. No web-style dropdowns. No browser devtools aesthetic. It feels like part of the operating system.
-
-## What it changes
-
-Notification response time drops from hours to minutes for time-sensitive reviews. No proactive GitHub checking means fewer context switches. 40MB memory footprint, negligible CPU — you forget it's running until it tells you something you need to know.
+I'm planning a second release once I clean up the notification filtering and add proper user settings.
 
 ## Stack
 

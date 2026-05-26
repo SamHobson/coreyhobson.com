@@ -122,6 +122,18 @@ Plain text plus an AI that can read and edit it is the combination that makes th
 
 **Project management.** Builds, deployments, and configuration for personal projects (UXRStudy, coreyhobson.com) run through the assistant. I describe what I want; the system figures out how to ship it.
 
+**Evening recap and weekly review.** At the end of each day, the assistant writes a recap of decisions, progress, and open questions. At the end of the week, it reviews all sessions — identifying patterns, suggesting skills to improve, and sometimes recommending a book or a course. I dump everything in there: what went well, what went badly, directions that didn't work. It finds the signal.
+
+## What I didn't expect
+
+**It built its own knowledge graph.** Without me asking, the AI started organizing everything into datasets — interconnecting references, creating categories, building flows between related topics. I didn't design this. It emerged from the system figuring out that cross-referencing made recall faster.
+
+**The habit is the hard part.** You have to consciously remember to use it. Ad-hoc conversations in meetings don't get captured. I can send voice notes via text for personal work, but I can't do that at work — security and privacy constraints. I need better habits around writing notes while waiting on things, managing agents between meetings. The tool can't fix the discipline problem.
+
+**If someone asked me where to start:** small. Build a couple workflows for daily tasks. Automate research. Use it as a sounding board. Don't try to architect the whole system upfront. Let it grow.
+
+Is this the permanent way of work? I don't know. It's still new. But the emergent behaviors — the dataset organization, the weekly reviews spotting patterns I missed — make me think it might be.
+
 ## Why this works
 
 <div class="not-prose flex flex-col md:flex-row gap-8 my-10 items-center">
