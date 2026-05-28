@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { slugFromId } from "../../utils/format";
 
 const allWork = (await getCollection("case-studies"))
   .filter((entry) => !entry.data.draft)
@@ -20,16 +21,18 @@ const allWork = (await getCollection("case-studies"))
     <div class="grid grid-cols-1 gap-8">
       {allWork.map((study) => (
         <a
-          href={`/work/${study.id.replace(/\.md$/, "")}`}
+          href={`/work/${slugFromId(study.id)}`}
           class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
         >
           {study.data.image && (
-            <div class="aspect-[21/9] overflow-hidden">
+            <div class="aspect-video overflow-hidden">
               <img
                 src={study.data.image}
                 alt={study.data.title}
                 class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 loading="lazy"
+                width="800"
+                height="450"
               />
             </div>
           )}

@@ -6,7 +6,6 @@ role: "Lead Product Designer"
 date: 2025-01-15
 tags: ["geospatial", "data-platform", "ai", "ux"]
 draft: true
-image: "/images/groundiq.jpg"
 website: "https://www.fugro.com/our-services/ground-investigation/groundiq"
 ---
 

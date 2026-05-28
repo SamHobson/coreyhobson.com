@@ -9,6 +9,7 @@ interface Props {
   image?: string;
   canonicalURL?: string;
   type?: "website" | "article";
+  publishedDate?: Date;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   image = "/images/og-default.png",
   canonicalURL = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", Astro.site).href,
   type = "website",
+  publishedDate,
 } = Astro.props;
 
 const siteName = "Corey Hobson";
@@ -49,7 +51,7 @@ const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
     <meta name="twitter:creator" content="@coreyhobson" />
     {type === "article" && (
-      <meta property="article:published_time" content={new Date().toISOString()} />
+      <meta property="article:published_time" content={publishedDate?.toISOString() ?? new Date().toISOString()} />
     )}
     {type === "article" && (
       <meta property="article:author" content="Corey Hobson" />

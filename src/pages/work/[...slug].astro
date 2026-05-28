@@ -20,6 +20,7 @@ const { Content } = await render(entry);
   description={entry.data.description}
   image={entry.data.image}
   type="article"
+  publishedDate={entry.data.date}
 >
   <article class="max-w-3xl mx-auto px-6 pt-24 pb-24">
     <header class="mb-12">
@@ -48,6 +49,8 @@ const { Content } = await render(entry);
           alt={entry.data.title}
           class="w-full rounded-sm"
           fetchpriority="high"
+          width="1200"
+          height="675"
         />
       </div>
     )}

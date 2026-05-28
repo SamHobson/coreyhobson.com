@@ -34,6 +34,20 @@ const allProjects = (await getCollection("projects"))
     </p>
   </section>
 
+  <!-- Hero image -->
+  <section class="w-full pb-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <img
+        src="/images/lmu-final-menu.webp"
+        alt="Le Mans Ultimate — main menu interface designed by Corey Hobson"
+        class="w-full rounded-sm"
+        fetchpriority="high"
+        width="1200"
+        height="675"
+      />
+    </div>
+  </section>
+
   <!-- Work -->
   <section class="max-w-6xl mx-auto px-6 pb-20">
     <div class="flex items-center justify-between mb-10">
@@ -56,6 +70,8 @@ const allProjects = (await getCollection("projects"))
                 class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 loading={i === 0 ? "eager" : "lazy"}
                 fetchpriority={i === 0 ? "high" : undefined}
+                width="800"
+                height="450"
               />
             </div>
           )}
@@ -121,6 +137,8 @@ const allProjects = (await getCollection("projects"))
                 alt={project.data.title}
                 class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 loading="lazy"
+                width="800"
+                height="450"
               />
             </div>
           )}
