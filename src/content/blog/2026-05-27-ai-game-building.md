@@ -3,7 +3,7 @@ title: "What I Learned Building a Game with AI in a Weekend"
 description: "I'm a game designer who can't code. With Claude, I built an RTS-chess hybrid in four hours. Here's what worked, what didn't, and what surprised me."
 date: 2026-05-27
 tags: ["game-dev", "ai", "coding", "experiments", "web"]
-draft: true
+draft: false
 ---
 
 I spent a weekend building a game. Four hours of actual sat-down work. The rest was designing documents and picking stacks.

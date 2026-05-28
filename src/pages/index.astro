@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { formatDate, slugFromId } from "../utils/format";
 
 const allWork = (await getCollection("case-studies"))
   .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
 
 const allPosts = (await getCollection("blog"))
   .filter((entry) => !entry.data.draft)
@@ -15,10 +17,6 @@ const allProjects = (await getCollection("projects"))
   .filter((entry) => !entry.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 4);
-
-function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
-}
 ---
 
 <BaseLayout title="Corey Hobson">
@@ -45,9 +43,9 @@ function formatDate(date: Date): string {
       </a>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {allWork.map((study) => (
+      {allWork.map((study, i) => (
         <a
-          href={`/work/${study.id.replace(/\.md$/, "")}`}
+          href={`/work/${slugFromId(study.id)}`}
           class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
         >
           {study.data.image && (
@@ -56,7 +54,8 @@ function formatDate(date: Date): string {
                 src={study.data.image}
                 alt={study.data.title}
                 class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                loading="lazy"
+                loading={i === 0 ? "eager" : "lazy"}
+                fetchpriority={i === 0 ? "high" : undefined}
               />
             </div>
           )}
@@ -87,14 +86,14 @@ function formatDate(date: Date): string {
     <div class="flex flex-col gap-0 border-t border-border">
       {allPosts.map((post) => (
         <a
-          href={`/blog/${post.id.replace(/\.md$/, "")}`}
+          href={`/blog/${slugFromId(post.id)}`}
           class="group flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5 border-b border-border hover:pl-2 transition-all"
         >
           <h3 class="text-base group-hover:text-accent transition-colors">
             {post.data.title}
           </h3>
-          <time class="text-muted text-sm font-mono shrink-0">
-            {formatDate(post.data.date)}
+          <time datetime={post.data.date.toISOString()} class="text-muted text-sm font-mono shrink-0">
+            {formatDate(post.data.date, { year: "numeric", month: "short" })}
           </time>
         </a>
       ))}
@@ -112,7 +111,7 @@ function formatDate(date: Date): string {
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {allProjects.map((project) => (
         <a
-          href={`/projects/${project.id.replace(/\.md$/, "")}`}
+          href={`/projects/${slugFromId(project.id)}`}
           class="group block bg-surface border border-border rounded-sm overflow-hidden hover:border-accent/40 transition-colors"
         >
           {project.data.image && (

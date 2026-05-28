@@ -15,7 +15,7 @@ const {
   title,
   description = "Corey Hobson — Lead Product Designer at Fugro on GroundIQ. Product design, AI workflows, complex data platforms.",
   image = "/images/og-default.png",
-  canonicalURL = Astro.url.href,
+  canonicalURL = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", Astro.site).href,
   type = "website",
 } = Astro.props;
 
@@ -47,10 +47,20 @@ const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:creator" content="@coreyhobson" />
+    {type === "article" && (
+      <meta property="article:published_time" content={new Date().toISOString()} />
+    )}
+    {type === "article" && (
+      <meta property="article:author" content="Corey Hobson" />
+    )}
   </head>
   <body class="bg-bg text-text min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-surface focus:text-accent focus:border focus:border-accent focus:rounded-sm">
+      Skip to content
+    </a>
     <Header />
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer />

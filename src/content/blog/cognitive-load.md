@@ -25,7 +25,7 @@ In games, the intrinsic cognitive load refers to the mental effort required to p
 
 This load arises from the elements that aren’t directly related to the gameplay. Such as *unclear UI, confusing controls, or excessive visual stimuli*. An increase in this cognitive load means taking the player’s attention away from the gameplay.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*h23ezF-3mUAeKNq9oEtzFw.jpeg)
+![Baldur's Gate 3 radial menu crowded with icons and inconsistent visual stimuli](https://miro.medium.com/v2/resize:fit:1400/1*h23ezF-3mUAeKNq9oEtzFw.jpeg)
 
 *The radial menu in Baldurs Gate 3 is an example of extraneous cognitive load, where there are a lot of visual stimuli and where the UI does not remain consistent across the radials.*
 
@@ -71,7 +71,7 @@ The following principles can help you create an engaging, immersive, and fun exp
 
 A great example here is **Diablo IV** item comparison where a lot of information is presented to the player. By highlighting the positive and negative effects of the items in green and red, the game provides visual cues to process the information.
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*Y6tFU-Uieoj6oIRS.jpg)
+![Diablo IV item comparison screen with stat increases in green and decreases in red](https://miro.medium.com/v2/resize:fit:1400/0*Y6tFU-Uieoj6oIRS.jpg)
 
 *Diablo IV Item comparison. Image taken from [squarespace](https://images.squarespace-cdn.com/content/v1/55ef0e29e4b099e22cdc9eea/1685462650411-FLMI8IV4CC3BE8DCHYAL/dd4.jpg)*
 
@@ -83,13 +83,13 @@ A great example here is **Diablo IV** item comparison where a lot of informati
 
 A classic example is of course the question mark boxes in Super Mario, which everyone knows you jump at to receive items.
 
-![](https://miro.medium.com/v2/resize:fit:512/1*KwMrJ_EVRT1BfM22_QfxAg.png)
+![Super Mario Bros question mark blocks, a consistent visual cue for hidden items](https://miro.medium.com/v2/resize:fit:512/1*KwMrJ_EVRT1BfM22_QfxAg.png)
 
 *Super Mario Bros question mark boxes. Image taken from [nesmaps.com](https://nesmaps.com/maps/SuperMarioBrothers/images/SMB1-1BG.png)*
 
 A more modern version of consistent visual language can be found in God of War where ledge markings show the player which areas are climable. Games such as Horizon zero dawn, assassins creed, and Final Fantasy have done similar things to their areas you can climb on.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*agFvEXE4uXZxgDDC4-1Z4A.jpeg)
+![God of War ledge with yellow markings signalling a climbable surface](https://miro.medium.com/v2/resize:fit:1400/1*agFvEXE4uXZxgDDC4-1Z4A.jpeg)
 
 *God of war ledge marking. Image taken from [Cloudfront](https://d1lss44hh2trtw.cloudfront.net/assets/editorial/2018/04/Faces-of-Magic-3-Artifact-God-of-War.jpg)*
 
@@ -101,7 +101,7 @@ A more modern version of consistent visual language can be found in God of War w
 
 Gradually introducing new information is done well in the latest Spiderman game. Where for example in combat a pop-up appears explaining which move to use. This is how a player learns new mechanics while already playing and enjoying the game.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*W6CghR0sR6wBvQQqgWNFDg.jpeg)
+![Spider-Man 2 combat with a contextual pop-up prompting which move to use](https://miro.medium.com/v2/resize:fit:1400/1*W6CghR0sR6wBvQQqgWNFDg.jpeg)
 
 *Spider-man 2 Fight. Image taken from [Polygon](https://www.polygon.com/spider-man-miles-morales-guide-ps4-ps5/21539473/combat-moves-enemy-base-crime-yank-web-stealth-dodge-swing-kick)*
 
@@ -113,11 +113,11 @@ Gradually introducing new information is done well in the latest Spiderman game.
 
 My favorite example has to be The Witcher 3 where there is a perfect ‘tutorial level’ which is woven into the story in which the player learns new mechanics step by step. First, you will learn how to scan the world for items in a room with Yennifer, next you learn how to navigate by racing Ciri and lastly you learn combat with Uncle Vezimir. These provide the player with a guided onboarding while introducing all of the important mechanics to the player in small chunks so they learn how to use them.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*_m365YXQk_3O6KTGrvh0lQ.jpeg)
+![The Witcher 3 tutorial teaching world scanning alongside Yennefer](https://miro.medium.com/v2/resize:fit:1400/1*_m365YXQk_3O6KTGrvh0lQ.jpeg)
 
 *The Witcher 3 World Scanning. Image taken from [Reddit](https://preview.redd.it/y2v3vzfri9n51.jpg?auto=webp&s=9f06b5b611a8abd073a9a0f3ec3f3af9aedf1432).*
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*TNQDKkvDoMl56sQk19e7AQ.jpeg)
+![The Witcher 3 combat tutorial at Kaer Morhen introducing fighting mechanics](https://miro.medium.com/v2/resize:fit:1400/1*TNQDKkvDoMl56sQk19e7AQ.jpeg)
 
 *The Witcher 3 Combat Tutorial. Image taken from [CheatCC](https://www.cheatcc.com/guides/the-witcher-3-wild-hunt-guide-walkthrough/walkthrough-27/tutorial-kaer-morhen/)*
 
@@ -129,17 +129,17 @@ My favorite example has to be The Witcher 3 where there is a perfect ‘tutorial
 
 What Bioware did with Mass Effect 3 was show the player dialogue options simplified into different emotions. Their dialogue wheel gave you text options that were categorized as friendly vs hostile etc and used the colors blue and red to identify which one you were about to click.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*-qPLUpuqYkpeJ0mJIvgwwg.png)
+![Mass Effect 3 dialogue wheel with friendly options in blue and hostile options in red](https://miro.medium.com/v2/resize:fit:1400/1*-qPLUpuqYkpeJ0mJIvgwwg.png)
 
 *Mass Effect 3 Dialogue wheel. Image taken from [ResearchGate](https://www.researchgate.net/publication/341278263_Gaming_Politics_Gender_and_Sexuality_on_Earth_and_Beyond/figures?lo=1)*
 
-![](https://miro.medium.com/v2/resize:fit:1400/0*0fLo_y82ePT1VgS9.png)
+![Close-up of the Mass Effect 3 dialogue wheel layout](https://miro.medium.com/v2/resize:fit:1400/0*0fLo_y82ePT1VgS9.png)
 
 *Mass Effect 3 Dialogue Wheel. Image taken from [TechRaptor](https://techraptor.net/originals/bullet-points-mass-effects-dialogue-wheel)*
 
 They did a similar thing in Dragon Age Inquisition but then used icons to identify what type of emotion that dialogue option presented.
 
-![](https://miro.medium.com/v2/resize:fit:1320/1*EUwZx_1IsOvUnHeEwn1RTw.jpeg)
+![Dragon Age Inquisition dialogue wheel using icons to indicate the tone of each option](https://miro.medium.com/v2/resize:fit:1320/1*EUwZx_1IsOvUnHeEwn1RTw.jpeg)
 
 *Dragon Age Inquisition Dialogue wheel. Image taken from [TechRaptor](https://techraptor.net/originals/bullet-points-mass-effects-dialogue-wheel)*
 
@@ -155,7 +155,7 @@ Gradually introduce mechanics, allow your players to learn at their pace (so und
 
 Providing immediate feedback on players’ actions is key to understanding complex systems. Doing so will let your player know that their action has been registered. Use visual cues, but also auditory, and tactile cues to provide affordances to indicate interactive elements. A vibrating controller or an item that lights up, such as in Baldur’s Gate 3 is a great way to provide feedback.
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*Ulppi3D4izw6tzH9wnw5dw.jpeg)
+![Baldur's Gate 3 interactive object lit up to signal it can be used](https://miro.medium.com/v2/resize:fit:1400/1*Ulppi3D4izw6tzH9wnw5dw.jpeg)
 
 *Baldurs Gate 3 Feedback and affordance. Image taken from [Game Guides](https://guides.gamepressure.com/baldurs-gate-iii/guide.asp?ID=55990)*
 

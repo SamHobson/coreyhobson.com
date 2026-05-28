@@ -3,7 +3,7 @@ title: "How I Write With AI"
 description: "I use AI in my writing process. Here's exactly how — what it does, what I do, and where the line is."
 date: 2026-05-27
 tags: ["ai", "writing", "transparency"]
-draft: true
+draft: false
 ---
 
 I use AI when I write. Not to write for me. To work with me. Here's what that means in practice.

@@ -194,3 +194,43 @@ Hermes will review every PR before merge. You must pass:
 - You (Claude Code) own implementation: Astro components, styles, build config
 - Hermes reviews every change before it lands
 - When stuck, ask — don't guess at aesthetics
+
+## Coding Standards
+
+These rules prevent recurring issues. Follow them on every change.
+
+### Images
+- **Always use `<img>` tags with `width`/`height` and descriptive `alt` text.** No `alt=""` on content images.
+- Prefer local images in `public/images/`. External image URLs need explicit approval.
+- Add `fetchpriority="high"` to the first visible hero image on index and listing pages.
+
+### Accessibility
+- Every page must include a **skip navigation link** (provided by BaseLayout).
+- Toggle buttons (mobile menu, etc.) must have `aria-expanded` and `aria-controls` attributes, with JS that toggles them.
+- External links (`target="_blank"`) must include `aria-label="opens in new tab"`.
+- All `<time>` elements must have a `datetime` attribute with ISO format.
+- `:focus-visible` styles are defined globally — do not override them without replacing them.
+
+### SEO & Metadata
+- Canonical URLs are normalized in BaseLayout (no trailing slashes). Do not set `canonicalURL` manually unless there's a specific reason.
+- Blog posts that republish content should have a `canonical` field in frontmatter pointing to the original.
+- All pages must include Open Graph and Twitter Card meta (provided by BaseLayout).
+- Article pages get `article:published_time` and `article:author` automatically.
+- Every project must have a `404.astro` page.
+
+### Code Quality
+- **Never duplicate utility functions.** Use `src/utils/format.ts` for `formatDate` and `slugFromId`.
+- All frontmatter fields must be declared in `src/content/config.ts` schemas with appropriate Zod types.
+- `sharp` is a devDependency, not a regular dependency.
+- `package.json` must include `check` (`astro check`) and `typecheck` (`tsc --noEmit`) scripts.
+- Run `npx prettier --write <file>` after editing files.
+
+### Security & Config
+- `vercel.json` must include security headers: `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`.
+- Never hardcode API keys, tokens, or secrets in any file.
+
+### Content Hygiene
+- **No dead links.** Remove references to old WordPress URLs (`coreyhobson.com/wp-content/...`).
+- Draft posts stay `draft: true`. Finished posts get `draft: false`.
+- All images referenced in frontmatter must exist in `public/images/`.
+- No em-dashes in copy. No AI-isms ("delve", "unlock", "supercharge", etc.).

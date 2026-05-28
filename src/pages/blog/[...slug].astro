@@ -1,25 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
+import { formatDate, slugFromId } from "../../utils/format";
 
 export async function getStaticPaths() {
   const entries = await getCollection("blog");
   return entries.map((entry) => ({
-    params: { slug: entry.id.replace(/\.md$/, "") },
+    params: { slug: slugFromId(entry.id) },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-
-function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
 ---
 
 <BaseLayout
@@ -29,7 +22,7 @@ function formatDate(date: Date): string {
 >
   <article class="max-w-3xl mx-auto px-6 pt-24 pb-24">
     <header class="mb-12">
-      <time class="text-muted text-sm font-mono mb-4 block">
+      <time datetime={entry.data.date.toISOString()} class="text-muted text-sm font-mono mb-4 block">
         {formatDate(entry.data.date)}
       </time>
       <h1 class="text-4xl md:text-5xl mb-6">{entry.data.title}</h1>
